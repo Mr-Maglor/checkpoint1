@@ -50,7 +50,7 @@ else
             sudo useradd $userName 
             if cat /etc/passwd | grep $userName > /dev/null ; then
                 echo " "
-                echo "L'utlisateur $userName a été crée"
+                echo "L'utlisateur $userName a été créée"
                 # temps d'attente
                 sleep 2s
                 # effacement des lignes précédentes pour plus de propreté
