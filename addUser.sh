@@ -2,7 +2,7 @@
 
 echo "Bonjour veuillez patientez svp."
 sleep 2s 
-# effacement des lignes précédentes poour plus de propreté
+# effacement des lignes précédentes pour plus de propreté
 clear
 
 # vérification que les arguement soit remplit
@@ -18,7 +18,7 @@ else
             echo  "Vous avez demandez de créer $# utilisateurs "
     # temps d'attente
     sleep 1s 
-    # effacement des lignes précédentes poour plus de propreté
+    # effacement des lignes précédentes pour plus de propreté
     clear
     # remise à zéro des nombres compté pour la boucle for
     userSucess=0
@@ -37,7 +37,7 @@ else
             echo "l'utilisateur $userName existe déjà"
             # temps d'attente
             sleep 1s 
-            # effacement des lignes précédentes poour plus de propreté
+            # effacement des lignes précédentes pour plus de propreté
             clear
             # comptage du nombre de création d'utilisateur échoué
             userFail=$(( $userFail + 1))
@@ -53,7 +53,7 @@ else
                 echo "L'utlisateur $userName a été crée"
                 # temps d'attente
                 sleep 2s
-                # effacement des lignes précédentes poour plus de propreté
+                # effacement des lignes précédentes pour plus de propreté
                 clear
                 # comptage du nombre de création d'utilisateur réussi
                 userSucess=$(( $userSucess + 1))
@@ -63,7 +63,7 @@ else
                 echo "Erreur à la création de l' utilisateur $userName"
                 # temps d'attente 
                 sleep 2s 
-                # effacement des lignes précédentes poour plus de propreté
+                # effacement des lignes précédentes pour plus de propreté
                 clear 
                 # comptage du nombre de création d'utilisateur échoué
                 userFail=$(( $userFail + 1))
