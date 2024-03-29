@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Bonjour veuillez patientez svp."
+echo "Bonjour veuillez patientez svp, je récupère le nombre d'utilisateurs que vous voulez créer."
 sleep 2s 
 # effacement des lignes précédentes pour plus de propreté
 clear
@@ -23,7 +23,7 @@ else
     # remise à zéro des nombres compté pour la boucle for
     userSucess=0
     userFail=0
-    # boucle for pour lister tout les utilisateur demandé à être créée
+    # boucle for pour créée tout les utilsiateurs demandé
     for userName in $* ; do
         echo  "Vous avez demandez de créer l'utilisateur suivant $userName "
         echo " "
@@ -32,7 +32,7 @@ else
         # temps d'attente
         sleep 2s
         if cat /etc/passwd | grep $userName > /dev/null ; then
-            # => si oui, on passe à l'utilsateur suivant
+            # => Oui on passe au suivant ou fin du script si aucun autre utilisateur doivent être créés
             echo " "
             echo "l'utilisateur $userName existe déjà"
             # temps d'attente
@@ -42,7 +42,7 @@ else
             # comptage du nombre de création d'utilisateur échoué
             userFail=$(( $userFail + 1))
         else
-            # => si non, on peur créer le premier utilisateur
+            # => Non, on peut créer l'utilsiateur
             echo " "
             echo "Création de l'utilisateur $userName en cours"
             # temps d'attente
@@ -57,6 +57,7 @@ else
                 clear
                 # comptage du nombre de création d'utilisateur réussi
                 userSucess=$(( $userSucess + 1))
+                # on passe au suivant ou fin du script si aucun autre utilisateur doivent être créés
             else
                 # erreur de création d'utilisateur
                 echo " "
@@ -67,13 +68,14 @@ else
                 clear 
                 # comptage du nombre de création d'utilisateur échoué
                 userFail=$(( $userFail + 1))
+                # on passe au suivant ou fin du script si aucun autre utilisateur doivent être créés
             fi
         fi
     done
 fi  
 
 
-# message fin du script
+# Message de fin du script
 echo "Le script c'est exécuté sans aucun souci :"
 echo " "
 # Nombre d'utilsiateur créé
@@ -86,7 +88,7 @@ echo "Nombre d'utilisateurs qui n'ont pas pu être créée $userFail sur $# "
 echo " "
 # temps d'attente
 sleep 1s 
-# Fin du script
+# Fin et sortie du script
 echo "Je vous souhaites une belle journée"
 
 exit 0
